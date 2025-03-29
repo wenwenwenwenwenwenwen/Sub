@@ -1467,7 +1467,7 @@ class Spider(Spider):
                     f'#EXTINF:-1 tvg-id="{item["channelId"]}" tvg-name="{item["channelName"]}" '
                     f'tvg-logo="{item["channelPic"]}" group-title="",'
                     f'{item["channelName"]}',
-                    f'http://127.0.0.1:9978/proxy?do=py&type=m3u8&pid={item["channelId"]}',
+                    f'http://127.0.0.1:9978/proxy?do=py&type=real_url&pid={item["channelId"]}',
                 )
             ]
             a += channels  # 合并到初始化的a中
@@ -1527,7 +1527,7 @@ class Spider(Spider):
         for i in range(10):
             url = f'https://ntd-tgc.cdn.hinet.net/live/pool/{a}/litv-pc/{a}-avc1_6000000={b}-mp4a_134000_zho={c}-begin={t}0000000-dur=40000000-seq={timestamp}.ts'
             if self.is_proxy:
-                url = f'http://127.0.0.1:9978/proxy?do=py&type=real_url&url={self.b64encode(url)}'
+                url = f'http://127.0.0.1:9978/proxy?do=py&type=ts&url={self.b64encode(url)}'
 
             m3u8_text += f'#EXTINF:4,\n{url}\n'
             timestamp += 1
