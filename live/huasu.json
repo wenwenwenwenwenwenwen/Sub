@@ -3,7 +3,7 @@
     {
       "name": "联通华数",
       "type": 3,
-      "api": "http://192.168.1.44:5244/d/%E6%9C%AC%E5%9C%B0%E6%A0%B9%E7%9B%AE%E5%BD%95/dev/kzb.py",
+      "api": "./kzb.py",
       "ext": {}
     }
   ]
