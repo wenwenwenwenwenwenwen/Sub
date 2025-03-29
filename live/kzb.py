@@ -1455,7 +1455,7 @@ class Spider(Spider):
     def liveContent(self, url):
         # 初始化默认M3U内容（至少包含EXTM3U声明）
         a = ['#EXTM3U']
-        
+
         try:
 
             data = json.loads(CHANNEL_DATA)
@@ -1514,8 +1514,8 @@ class Spider(Spider):
             pid = params['pid']
             channel_url = self.get_channel_url(pid)
             real_url = self.generate_real_url(channel_url)
-            #return [302, "text/plain", None, {'Location': real_url}]
-            return [302, "text/plain", None, {'Location': 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}]
+            m3u8_text = f'#EXTM3U\n#EXT-X-VERSION:3\n#EXT-X-STREAM-INF:BANDWIDTH=4000000,RESOLUTION=1280x720\n{real_url}\n'
+            return m3u8_text
         return [302, "text/plain", None, {'Location': 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}]
     def proxyM3u8(self, params):
         pid = params['pid']
