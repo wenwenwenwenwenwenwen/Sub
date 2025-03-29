@@ -3,7 +3,7 @@
     {
       "name": "联通华数",
       "type": 3,
-      "api": "./kzb.py",
+      "api": "./live_litv.py",
       "ext": {}
     }
   ]
