@@ -1511,7 +1511,8 @@ class Spider(Spider):
         if params['type'] == "ts":
             return self.get_ts(params)
         if params['type'] == "real_url":
-            channel_url = self.get_channel_url(id)
+            pid = params['pid']
+            channel_url = self.get_channel_url(pid)
             real_url = self.generate_real_url(channel_url)
             return [302, "text/plain", None, {'Location': real_url}]
         return [302, "text/plain", None, {'Location': 'https://sf1-cdn-tos.huoshanstatic.com/obj/media-fe/xgplayer_doc_video/mp4/xgplayer-demo-720p.mp4'}]
